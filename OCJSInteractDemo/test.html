@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta content="always" name="referrer" />
+        <title>Test Page</title>
+        <script type="text/javascript">
+            function closeWebView(){
+                mobileObject.closeWebView("test js call native object method");
+            }
+        
+            function testProperties() {
+                mobileObject.x = 30;
+                mobileObject.y = 40;
+                mobileObject.testProperties("mobileObject:x ="+mobileObject.x+" y=" + mobileObject.y);
+            }
+        
+            function testMultiParamsFunc () {
+                mobileObject.testMultiParamFunctionSecondParam("first params from js", "second params from js");
+            }
+        </script>
+    </head>
+    <body bgcolor="#E6E6FA">
+        <br/>
+        <a href="test" onClick="javascript:logUsingNativeBlock('test js call native block');">testInteractionWithBlock</a>
+        <br/>
+        <a href="test" onClick="javascript:multiParamslogUsingNativeBlock('first param', {'dickey':'dicValue'});">testInteractionWithMultiParamBlock</a>
+        <br/>
+        <a href="test" onClick="javascript:testProperties();">testInteractionProperties</a>
+        <br/>
+        <a href="test" onClick="javascript:testMultiParamsFunc();">testMultiParamsFunc</a>
+        <br/>
+        <a href="test" onClick="javascript:closeWebView();">close</a>
+    </body>
+</html>
